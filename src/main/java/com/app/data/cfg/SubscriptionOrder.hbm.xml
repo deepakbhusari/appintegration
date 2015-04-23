@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.app.model.SubscriptionOrder" table="SUBSCRIPTIONORDER">
+		<meta attribute="class-description">Order details.</meta>
+
+		<id name="id" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="editionCode" type="java.lang.String" />
+		<property name="pricingDuration" type="java.lang.String" />
+		<set name="item" table="ITEM" inverse="true" lazy="false" fetch="select"
+			cascade="all">
+			<key not-null="true">
+				<column name="id"></column>
+			</key>
+			<one-to-many class="com.app.model.Item" />
+		</set>
+		<property name="accountIdentifier" type="java.lang.String" />
+		<property name="status" type="java.lang.String" />
+		<property name="type" type="java.lang.String" />
+		<property name="marketPlace" type="java.lang.String" />
+		<property name="userId" type="java.lang.String" />
+	</class>
+</hibernate-mapping>

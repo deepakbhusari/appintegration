@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class name="com.app.model.Item" table="ITEM">
+
+<meta attribute="class-description">Item details.</meta>
+
+	<id name="itemid" type="java.lang.Long" >
+	   <generator class="native" />
+	</id>
+
+    <many-to-one name="main_order" class="com.app.model.SubscriptionOrder" fetch="select">
+            <column name="id" not-null="true" />
+    </many-to-one>
+        
+     <property name="quantity" type="java.lang.Integer"  />
+     <property name="unit" type="java.lang.String"  />
+    </class>
+</hibernate-mapping>

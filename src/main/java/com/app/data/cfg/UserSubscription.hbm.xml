@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.app.model.UserSubscription" table="USER_SUBSCRIPTION">
+		<meta attribute="class-description">USER_SUBSCRIPTION details.</meta>
+		<composite-id>
+			<key-property name="id" type="java.lang.String" />
+			<key-property name="uuid" type="java.lang.String" />
+		</composite-id>
+	</class>
+</hibernate-mapping>
+

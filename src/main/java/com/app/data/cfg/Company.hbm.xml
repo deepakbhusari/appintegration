@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.app.model.Company" table="COMPANY">
+		<meta attribute="class-description">Company details.</meta>
+		<id name="uuid" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="country" type="java.lang.String" />
+		<property name="email" type="java.lang.String" />
+		<property name="name" type="java.lang.String" />
+		<property name="phoneNumber" type="java.lang.String" />
+		<property name="website" type="java.lang.String" />
+	</class>
+</hibernate-mapping>
